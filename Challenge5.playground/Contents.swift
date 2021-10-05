@@ -15,6 +15,12 @@ func countTheCharacters(input: String, character: Character) -> Int {
     }
     
     return characterCount
+    
+    // Paul's solution using reduce()
+
+    return input.reduce(0) {
+        $1 == character ? $0 + 1 : $0
+    }
 }
 
 assert(countTheCharacters(input: "The rain in Spain", character: "a") == 2, "Challenge 5 failed")
